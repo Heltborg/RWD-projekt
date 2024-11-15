@@ -1,0 +1,1095 @@
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* prettier-ignore */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* prettier-ignore */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+}
+/* prettier-ignore */
+ol, ul {
+	list-style: none;
+}
+/* prettier-ignore */
+blockquote, q {
+	quotes: none;
+}
+/* prettier-ignore */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ---------------------------- vores css starter ---------------------------- */
+body {
+  background-color: #fefdf9;
+  font-size: 1rem;
+  font-family: Inter, sans-serif;
+  font-weight: 250;
+  line-height: 1.5rem;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 1rem;
+}
+
+/* -- navigation -- */
+nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* -- logo -- */
+.logo {
+  width: 60%;
+}
+
+/* -- søg og kurv ikon styling enkeltvis -- */
+.ikon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* -- søg og kurv ikon styling samlet -- */
+.ikoner {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem;
+  justify-self: end;
+}
+
+/* -- Skjul checkboxen -- */
+#burgermenu {
+  display: none;
+}
+
+/* -- Burgermenu-ikon styling (åbner menuen) -- */
+.menu-ikon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.menu-ikon img {
+  width: 100%;
+  height: auto;
+}
+
+/* -- når submenuen er åben -- */
+#burgermenu:checked + .menu-ikon + .menu-items {
+  display: grid; /* Viser menuen når checkbox er tjekket */
+  position: absolute;
+  grid-template-columns: 1fr;
+}
+
+/* -- Submenu styling -- */
+.menu-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0; /* Placer submenuen i højre side */
+  width: 70%; /* Fylder 70% af skærmens bredde */
+  background-color: #fefdf9;
+  padding: 1rem;
+  box-shadow: -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* skygge */
+  text-align: left;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.menu-items a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* -- Hover effekt på menupunkter -- */
+.menu-items a:hover {
+  text-decoration: underline #6f926f;
+}
+
+/* -- Understreget når menupunktet er klikket på -- */
+#kvinder {
+  text-decoration: underline #6f926f;
+}
+
+#maend {
+  text-decoration: underline #6f926f;
+}
+
+#interior {
+  text-decoration: underline #6f926f;
+}
+
+#om-os {
+  text-decoration: underline #6f926f;
+}
+
+/* -- FORSIDEN -- */
+/* -- Grid system for forsiden -- */
+.content-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* én kolonne */
+}
+
+/* -- nyheder hero billede -- */
+.hero-billede {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-width: 100vw; /* content kan ikke fylde mere end 100% af viewporten */
+}
+
+/* -- mobil billede -- */
+.hero-billede-mobil {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -- desktop billede -- */
+.hero-billede-desktop {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+/* -- ECHO sektion forside -- */
+.echo-logo-mobil {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Horisontal centrering */
+}
+
+/* -- skjul logo til desktop -- */
+.echo-logo-desktop {
+  display: none;
+}
+
+.echo-mobil {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* to kolonner */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.echo-desktop {
+  display: none;
+}
+
+/* -- echo tekst og knap -- */
+.echo-tekst-knap {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrerer indholdet horisontalt */
+  justify-content: center; /* Centrerer indholdet vertikalt */
+  height: 100%; /* Sørger for, at containeren fylder hele højden af grid-området */
+}
+
+/* -- kun echo knap -- */
+.echo-knap {
+  grid-area: echo-tekst; /* placer knappen i samme område som teksten */
+  background-color: #6f926f;
+  color: white;
+  border: 1px solid #6f926f;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Skygge */
+}
+
+/* -- effekt ved hover over echo-knappen -- */
+.echo-knap:hover {
+  background-color: white;
+  color: #6f926f;
+  border: 1px solid;
+  border-color: #6f926f;
+  transition: background-color 0.3s ease, color 0.3s ease; /* glidende overgang */
+}
+
+/* -- echo billede -- */
+.echo-forside-billede {
+  width: 100%;
+  height: auto;
+  border-radius: 20%;
+}
+
+/* -- interiør sektion -- */
+.interior img {
+  position: relative;
+  text-align: center;
+  max-width: 100vw; /* content kan ikke fylde mere end 100% af viewporten */
+}
+
+/* -- kvinder sektion -- */
+.kvinder-mobil img {
+  position: relative;
+  text-align: center;
+  max-width: 100vw; /* content kan ikke fylde mere end 100% af viewporten */
+}
+
+/* -- mænd sektion -- */
+.maend-mobil img {
+  position: relative;
+  text-align: center;
+  max-width: 100vw; /* content kan ikke fylde mere end 100% af viewporten */
+  padding-bottom: 3rem;
+}
+
+.maend-og-kvinder-desktop {
+  display: none;
+}
+
+/* -- NYHEDER SIDE -- */
+.produkt-hero-billede-mobil {
+  display: grid;
+  width: 100vw;
+  height: auto;
+}
+
+.produkt-hero-billede-desktop {
+  display: none;
+}
+
+/* -- sortering og filter ikoner -- */
+.sortering-ikoner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+#plus-ikon,
+#filter-ikon {
+  width: 10%;
+}
+
+#sorter-efter,
+#filtre {
+  font-size: small;
+  font-weight: 500;
+  justify-self: end;
+  padding-right: 0.4rem;
+}
+
+/* -- produkt sektion -- */
+.produkt-sektion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  font-size: 0.8rem;
+}
+
+.produktbillede {
+  width: 100%;
+}
+
+.produkt-maerke {
+  font-size: small;
+  font-weight: 350;
+}
+
+.produkt-beskrivelse-mobil {
+  font-weight: 350;
+}
+
+.produkt-beskrivelse-desktop {
+  display: none;
+}
+
+.produkt-pris {
+  font-weight: 350;
+}
+
+.produkt-sektion-ekstra {
+  display: none;
+}
+
+/* -- se mere knap -- */
+.se-mere-knap {
+  background-color: white;
+  color: #6f926f;
+  border: 2px solid #6f926f;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6rem;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Skygge */
+}
+
+/* -- effekt ved hover over se-mere-knappen -- */
+.se-mere-knap:hover {
+  background-color: #6f926f;
+  color: white;
+  border-color: #6f926f;
+  transition: background-color 0.3s ease, color 0.3s ease; /* glidende overgang */
+}
+
+/*----- Grundlæggende farver og opsætning til echo side ------*/
+#echo-page {
+  background-color: #f7f2e0;
+}
+
+/* Echo sektion styling - Mobil  */
+.echo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.echo-logo2 img {
+  width: 15rem;
+  margin-top: 1rem;
+}
+
+em {
+  font-style: italic;
+}
+
+.echo-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 30rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.echo-text p {
+  margin-bottom: 0.9375rem;
+}
+
+.echo-image {
+  margin-top: 1rem;
+}
+
+.echo-image img {
+  max-width: 20rem;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+/* Reservation sektion styling - Mobil  */
+.reservation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.reservation-image {
+  display: none; /* Skjules på mobil */
+}
+
+.reservation-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  max-width: 40rem;
+  margin-top: 1rem;
+}
+
+.long-text {
+  display: none; /* Kun på desktop */
+}
+
+.short-text {
+  display: block;
+  margin: 0rem 1rem 1rem 1rem;
+}
+
+/* -- reservationsknap -- */
+.reservation-button {
+  background-color: #6f926f;
+  color: white;
+  border: 1px solid #6f926f;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 3rem;
+  justify-content: center;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Skygge */
+}
+
+/* -- effekt ved hover over se-mere-knappen -- */
+.reservation-button:hover {
+  background-color: white;
+  color: #6f926f;
+  border: 1px solid;
+  transition: background-color 0.3s ease, color 0.3s ease; /* glidende overgang */
+}
+
+/* Mobil styling af instagram */
+.instagram-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  grid-column: 1/-1;
+}
+
+.instagram-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.instagram-gallery {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow-x: auto; /* Tillader horisontal scrolling for billederne på mobil */
+  flex-grow: 1;
+  width: 100%;
+}
+
+.gallery-image {
+  width: auto;
+  height: auto;
+  max-width: 40%; /* Mindre billedstørrelse til mobilen */
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+/*---------------------------- Styling af om os ---------------------*/
+/* Billedsektion styling */
+.om_os_billede {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.om_os_billede img {
+  width: 100vw;
+}
+
+/* Sektionerne OM RAASTED og OM ECHO */
+.omraasted,
+.omecho {
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.omraasted h2,
+.omecho h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.omraasted p,
+.omecho p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.grid-layout {
+  max-width: 900px;
+}
+
+.desktop-list {
+  display: none;
+}
+
+.button_om_os {
+  display: inline-block;
+  background-color: #78866b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.button_om_os:hover {
+  background-color: #5e6a53;
+}
+
+/*---------------------------- Styling af interiør ---------------------*/
+/* ------Grid layout for kategorier for mobil------  */
+.categories {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem; /* Afstand mellem billeder */
+}
+
+.category {
+  position: relative;
+}
+
+.category img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.categories .category:last-child {
+  margin-bottom: 5rem; /* tilføj lidt ekstra plads efter det sidste billede */
+}
+
+/* -- FOOTER -- */
+.footer-container {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+}
+
+/* -- generel styling for sektionerne i footer -- */
+.footer-sektioner {
+  margin-left: 5%;
+}
+
+/* -- overskrifter --*/
+.footer-overskrift {
+  font-size: x-large;
+  padding-bottom: 3%;
+  font-weight: 150;
+}
+
+/* -- links i footer -- */
+.some-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-sektioner#raasted-og-echo {
+  display: none;
+}
+
+/* -- tilmeld nyhedsbrev -- */
+.email-felt {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 2px solid black;
+  font-size: 1rem;
+  font-family: inter, sans-serif;
+  color: #aaa;
+  max-width: 100%;
+  margin-bottom: 15%;
+}
+
+/* ------------------------ Media query for tablets ------------------------ */
+@media (min-width: 692px) {
+  /* -- sorter efter og filter skriftstørrelse -- */
+  #sorter-efter,
+  #filtre {
+    font-size: medium;
+    font-weight: 500;
+    justify-self: end;
+    padding-right: 0.4rem;
+  }
+
+  /* -- se mere knap -- */
+  .se-mere-knap {
+    background-color: white;
+    color: #6f926f;
+    border: 2px solid #6f926f;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border-radius: 6rem;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  /* ------------------------ interiør ------------------------ */
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* -- det store billede øverst -- */
+  .category:first-child {
+    grid-column: 1 / -1; /* spænder over alle tre kolonner */
+    height: auto; /* større højde for det første billede */
+    margin-left: calc(-50vw + 50%);
+    width: 100vw;
+  }
+
+  /* -- de små billeder -- */
+  .category img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ------------------------ om os ------------------------ */
+  .gallery-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 90%; /* Fylder 90% af skærmens bredde for bedre centrering */
+    justify-content: center;
+  }
+
+  .gallery-image {
+    width: 22%; /* Sætter billederne til 22% af galleriets bredde */
+    height: auto; /* Lader højden følge bredden for korrekt proportion */
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .om_os_billede,
+  .omraasted,
+  .omecho {
+    grid-column: span 1;
+  }
+
+  .om_os_side {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+/* ------------------------ Media query for desktops ------------------------ */
+@media (min-width: 900px) {
+  /* -- Skjul burgermenuen -- */
+  .menu-ikon {
+    display: none;
+  }
+
+  /* -- Vis menu i navigationen -- */
+  .menu-items {
+    display: grid;
+    position: static;
+    grid-area: menu;
+    grid-template-columns: repeat(6, auto);
+    gap: 2rem;
+    justify-content: space-between;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  /* -- Layout for søg og kurv -- */
+  .ikoner {
+    grid-area: icons;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1.5rem;
+    padding: 0 1.5rem; /* luft til kanterne af boksen */
+    justify-content: space-around; /* afstand omkring ikonerne */
+    align-items: center;
+  }
+
+  /* -- Layout til navigation -- */
+  nav {
+    grid-template-columns: 35% 55% auto; /* hvor meget de forskellige areas skal fylde */
+    grid-template-areas: "logo menu icons";
+  }
+
+  /* ------------------------ INTERIØR ------------------------ */
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolonner */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* -- det store billede øverst -- */
+  .category:first-child {
+    grid-column: 1 / -1; /* spænder over alle tre kolonner */
+    height: auto; /* større højde for det første billede */
+    margin-left: calc(-50vw + 50%);
+    width: 100vw;
+  }
+
+  /* -- de små billeder -- */
+  .category img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ------------------------ FORSIDE ------------------------ */
+  .hero-billede-mobil {
+    display: none;
+  }
+
+  .hero-billede-desktop {
+    display: block;
+  }
+
+  /* ------------ Echo sektion ----------- */
+  /* -- skjul kort echo tekst -- */
+  .echo-mobil {
+    display: none;
+  }
+
+  /* -- vis længere echo tekst -- */
+  .echo-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* to kolonner */
+    gap: 2rem;
+    align-items: center; /* vertikalt centrer indholdet */
+    justify-content: center; /* horisontalt centrer indholdet */
+    text-align: left;
+  }
+
+  /* -- skjul echo logo fra mobil -- */
+  .echo-logo-mobil {
+    display: none;
+  }
+
+  /* -- vis echo logo til desktop -- */
+  .echo-logo-desktop {
+    display: grid;
+    align-self: center;
+    width: 50%;
+  }
+
+  .echo-tekst-knap {
+    text-align: left;
+    padding-left: 4rem;
+  }
+
+  /* -- ryk teksten lidt længere ind -- */
+  .echo-tekst-knap p {
+    margin-left: 15%;
+  }
+
+  /* -- centrer knappen -- */
+  .echo-tekst-knap a {
+    align-self: center;
+  }
+
+  .echo-forside-billede {
+    justify-self: center;
+    height: 30rem;
+    max-height: 100%;
+    width: auto;
+    border-radius: 20%;
+  }
+
+  /* ------------ interiør forsidebillede ------------ */
+  .interior {
+    display: grid;
+    place-items: center;
+    padding: 5% 0;
+  }
+
+  .interior img {
+    max-width: 90vw;
+    height: auto;
+  }
+
+  /* ------------ kvinder og mænd forsidebilleder ------------ */
+  .kvinder-mobil,
+  .maend-mobil {
+    display: none;
+  }
+
+  .maend-og-kvinder-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .maend-og-kvinder-desktop img {
+    width: 90%;
+    height: auto;
+    object-fit: cover; /* fylder billedet til containeren uden at forvrænge det */
+    padding-left: 10%;
+    padding-bottom: 10%;
+  }
+
+  /* ------------------------ MENUPUNKTER FÆLLES PÅ SIDERNE ------------------------ */
+  .produkt-hero-billede-mobil {
+    display: none;
+  }
+
+  .produkt-hero-billede-desktop {
+    display: grid;
+    width: 100vw;
+    height: auto;
+  }
+
+  .sortering-ikoner {
+    display: none;
+  }
+
+  /* -- produkter -- */
+  .produkt-sektion {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+  }
+
+  .produkt-beskrivelse-mobil {
+    display: none;
+  }
+
+  .produkt-beskrivelse-desktop {
+    display: grid;
+    font-weight: 350;
+  }
+
+  .produkt-sektion-ekstra {
+    display: block;
+  }
+
+  /* -- se mere knap -- */
+  .se-mere-knap {
+    background-color: white;
+    color: #6f926f;
+    border: 2px solid #6f926f;
+    padding: 0.6rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 6rem;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  /* ------------------------ Echo side ------------------------ */
+  #echo-page {
+    background-color: #f7f2e0;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .echo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .echo-logo2 {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .echo-logo2 img {
+    width: 25rem;
+  }
+
+  .echo-text {
+    grid-column: 1 / 2;
+    font-size: 1.1rem;
+    margin-top: -10rem;
+    text-align: left;
+  }
+
+  .echo-image {
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: center;
+    margin-top: -5rem;
+  }
+
+  .echo-image img {
+    width: 100%;
+    max-width: 35rem;
+    height: auto;
+  }
+
+  /* -- Reservation sektion -- */
+  .reservation-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: center;
+    max-width: 100vw;
+  }
+
+  .reservation-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .reservation-image img {
+    max-width: 35rem;
+    border-radius: 10%;
+  }
+
+  .long-text {
+    display: block;
+    font-size: 1.1rem;
+    margin: 2rem 3.5rem;
+    text-align: left;
+  }
+
+  .short-text {
+    display: none;
+  }
+
+  /* -- instgram sektion computer -- */
+  .instagram-section {
+    text-align: center;
+    width: 100%;
+    margin-left: 4.5%;
+    margin-bottom: 2%;
+  }
+
+  .instagram-heading {
+    font-size: 3rem;
+    margin: 4rem 0;
+  }
+
+  .gallery-image {
+    max-width: 200%; /* Øg bredde til en større værdi */
+    height: auto; /* Bevarer billedets proportioner */
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+
+  /* ------------------------ OM OS ------------------------ */
+  /* -- desktop-listerne synlige -- */
+  .desktop-list {
+    display: block;
+  }
+
+  .desktop-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  /* -- pilene -- */
+  .desktop-list li .arrow {
+    color: #78866b;
+  }
+
+  /* -- to kolonner på desktop -- */
+  .om_os_side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100vw;
+    align-items: start;
+  }
+
+  .om_os_billede {
+    grid-column: 1 / -1; /* billedet strækker sig over begge kolonner */
+    text-align: center;
+    max-width: 100vw;
+    padding: 0;
+  }
+
+  /* -- styling på listerne -- */
+  .omraasted,
+  .omecho {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .omraasted h2,
+  .omecho h2 {
+    font-weight: 500;
+    font-size: x-large;
+    padding: 1.5rem 0;
+    text-decoration: underline 1px solid black;
+  }
+
+  /* -- skjul mobil tekst -- */
+  .omraasted p,
+  .omecho p,
+  .omraasted .button_om_os,
+  .omecho .button_om_os {
+    display: none;
+  }
+
+  /* ------------------------ FOOTER ------------------------ */
+  .footer-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Fire kolonner */
+    grid-template-areas: "raasted" "om-os" "connect" "nyhedsbrev";
+  }
+
+  /* -- skjul raasted sektion -- */
+  .footer-sektioner#raasted {
+    display: none;
+  }
+
+  /* -- skjul echo sektion -- */
+  .footer-sektioner#echo {
+    display: none;
+  }
+
+  /* -- vis raasted og echo samlet i en blok -- */
+  .footer-sektioner#raasted-og-echo {
+    display: block;
+  }
+}

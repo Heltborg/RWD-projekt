@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECHO EATERY | RAASTED</title>
+    <link rel="icon" type="image/png" href="img/logo-ikon.png" />
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Connected til google fonts og icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!----------------------body starter ---------------------->
+  <body>
+    <!---------------------- header starter ---------------------->
+    <header>
+      <nav>
+        <!-- logo -->
+        <div>
+          <a href="index.html"><img src="img/logo.png" alt="RAASTED logo" class="logo" /></a>
+        </div>
+
+        <!-- søg og kurv ikoner -->
+        <div class="ikoner">
+          <img src="img/soeg-ikon.png" alt="Søg" class="ikon" />
+          <img src="img/cart-ikon.png" alt="Kurv" class="ikon" />
+        </div>
+
+        <!-- burgermenuen -->
+        <input type="checkbox" id="burgermenu" />
+        <label for="burgermenu" class="menu-ikon">
+          <img src="img/burgermenu.png" alt="Burgermenu" />
+        </label>
+
+        <!-- Menu -->
+        <div class="menu-items">
+          <a href="kvinder.html">Kvinder</a>
+          <a href="maend.html">Mænd</a>
+          <a href="#">Velvære</a>
+          <a href="interior.html">Interiør</a>
+          <a href="#">Brands</a>
+          <a href="om-os.html">Om os</a>
+        </div>
+      </nav>
+    </header>
+
+    <!---------------------- main starter ---------------------->
+    <main id="echo-page">
+      <!-- Echo Sektion -->
+      <section class="echo-section">
+        <!-- Logo-billede -->
+        <figure class="echo-logo2">
+          <img src="img/echo-logo.png" alt="ECHO logo" />
+        </figure>
+
+        <!-- Tekstindhold -->
+        <article class="echo-text">
+          <p><em>ECHO eatery</em> er vores lille hyggelige café som du finder på overetagen i RAASTED.</p>
+          <p>I overensstemmelse med alle andre aspekter af vores forretning er vores tilgang til mad både meningsfuld og moderne.</p>
+          <p>Vi værdsætter sunde vegetariske måltider, samt økologiske og lokalt fremskaffede ingredienser.</p>
+          <p>Alt vores bagværk kommer fra vores venner hos Koba Bakery. Kaffen er nøje udvalgt af Prolog, og vores vin er ufiltreret og 100% naturlig.</p>
+        </article>
+
+        <!-- Billede -->
+        <figure class="echo-image">
+          <img src="img/echo_billede1.jpg" alt="En tallerken med mad på et bord" />
+        </figure>
+      </section>
+
+      <!---------------------- Reservation ---------------------->
+      <section class="reservation-section">
+        <!-- Billedet af vafler -->
+        <figure class="reservation-image">
+          <img src="img/vaffel_billede.png" alt="Billede af vafler og drikkevarer" />
+        </figure>
+
+        <!-- tekst til reservation -->
+        <section class="reservation-text">
+          <!-- lang tekst -->
+          <p class="long-text">
+            For at være sikker på en plads i caféen anbefaler vi, at du reserverer et bord på forhånd. Det giver dig ro til at nyde dit besøg uden bekymring om ventetid, især på travle dage.
+          </p>
+          <p class="long-text">Når du reserverer, kan vi desuden bedre sikre, at både atmosfæren og servicen lever op til dine forventninger.</p>
+          <p class="long-text">Men du er naturligvis også altid velkommen til at kigge forbi uden reservation – vi gør vores bedste for at finde plads til alle.</p>
+
+          <!-- kort tekst -->
+          <p class="short-text">For at være sikker på en plads i caféen anbefaler vi, at du reserverer et bord. Men du er naturligvis også velkommen til at kigge forbi uden reservation.</p>
+          <a href="#" class="reservation-button">Reservér bord</a>
+        </section>
+
+        <!---------------------- Instagram Sektion ---------------------->
+        <section class="instagram-section">
+          <h2 class="instagram-heading">Følg os på Instagram</h2>
+
+          <!-- Billeder i grid -->
+          <div class="gallery-grid">
+            <img src="img/instgram_billede1.jpg" alt="Instagram billede 1" class="gallery-image" />
+            <img src="img/instagram_billede2.jpg" alt="Instagram billede 2" class="gallery-image" />
+            <img src="img/instagram_billede3.jpg" alt="Instagram billede 3" class="gallery-image" />
+            <img src="img/instagram_billede4.jpg" alt="Instagram billede 4" class="gallery-image" />
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!---------------------- Footer starter ---------------------->
+    <footer class="footer-container">
+      <!-- RAASTED info -->
+      <!-- både class og id så de kan styles individuelt i media queries -->
+      <section class="footer-sektioner" id="raasted">
+        <h1 class="footer-overskrift">RAASTED</h1>
+        <p>
+          Mandag - fredag: 11.00 - 17.30 <br />
+          Lørdag: 10.00 - 16.00
+          <br />
+          <br />
+          Badstuegade 1E, 8000 Aarhus C
+        </p>
+      </section>
+
+      <!-- ECHO eatery info -->
+      <!-- både class og id så de kan styles individuelt i media queries -->
+      <section class="footer-sektioner" id="echo">
+        <h1 class="footer-overskrift">ECHO eatery</h1>
+        <p>Tirsdag - søndag: 08.00 - 17.30</p>
+      </section>
+
+      <!-- raasted og echo info samlet til større skærme -->
+      <section class="footer-sektioner" id="raasted-og-echo">
+        <h1 class="footer-overskrift">RAASTED</h1>
+        <p>
+          Mandag - fredag: 11.00 - 17.30 <br />
+          Lørdag: 10.00 - 16.00
+          <br />
+          <br />
+          Badstuegade 1E, 8000 Aarhus C
+        </p>
+        <br />
+        <h1 class="footer-overskrift">ECHO eatery</h1>
+        <p>Tirsdag - søndag: 08.00 - 17.30</p>
+      </section>
+
+      <!-- Om os info -->
+      <section class="footer-sektioner">
+        <h1 class="footer-overskrift">Om os</h1>
+        <p>
+          Hvem er vi? <br />
+          Kontakt <br />
+          Levering og returnering <br />
+          FAQ
+        </p>
+      </section>
+
+      <!-- Connect info -->
+      <section class="footer-sektioner">
+        <h1 class="footer-overskrift">Connect</h1>
+        <p class="some-links">
+          <a href="https://www.instagram.com/raastedstore/">Instagram</a> <br />
+          <a href="https://www.facebook.com/raastedstore">Facebook</a>
+        </p>
+      </section>
+
+      <!-- Nyhedsbrev info -->
+      <section class="footer-sektioner">
+        <h1 class="footer-overskrift">Nyhedsbrev</h1>
+        <p>Tilmeld dig vores nyhedsbrev, og få 10% rabat på din første ordre.</p>
+        <form>
+          <input type="email" placeholder="Skriv din e-mail" class="email-felt" required />
+        </form>
+      </section>
+    </footer>
+  </body>
+</html>
